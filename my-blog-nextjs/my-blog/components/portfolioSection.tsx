@@ -3,28 +3,26 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Date from '../components/date'
+import portfolioCard from '../components/portfolioCard'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-    return {
-      props: {
-        allPostsData
-      }
-    }
-}
 
-export default function portfolioSection({allPostsData} : {
+export default function PortfolioSection({allPostsData} : {
     allPostsData: {
       date: string
       title: string
       id: string
     }[]
   })  {
+
     return (
 
         <>
 
         {allPostsData.map(({ id, date, title }) => (
+
+        // <Card id={id} date={'/posts/' .id} title={} />
+
+
                     <li key={id}>
                     <Link href={`/posts/${id}`}>
                     <a>{title}</a>
@@ -36,7 +34,7 @@ export default function portfolioSection({allPostsData} : {
                 </li>
                 ))}
                 <h1>Portfolio Section</h1>
-                <Card />
+                
             )
         </>
 

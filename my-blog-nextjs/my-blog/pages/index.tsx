@@ -4,9 +4,20 @@ import Link from 'next/link'
 import Header from '../components/header'
 import Hero from '../components/hero'
 import PortfolioSection from '../components/portfolioSection'
+import { getSortedPostsData } from '../lib/posts'
 
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+    return {
+      props: {
+        allPostsData
+      }
+    }
+}
+
+
+export default function Home( { allPostsData} ) {
   return (
 
     <>
@@ -17,7 +28,7 @@ export default function Home() {
 
     <Header />
     <Hero />
-    <PortfolioSection />
+    <PortfolioSection allPostsData={allPostsData} />
 
       <h1>Hello World</h1>
       <Link href="/posts/portfolio">
