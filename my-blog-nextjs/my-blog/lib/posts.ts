@@ -23,15 +23,17 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string })
+      ...(matterResult.data as { date: string; title: string; img: string; })
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+  return allPostsData.sort(({ date: a }, { date: b }) => {
+    if (a < b) {
       return 1
-    } else {
+    } else if (a > b) {
       return -1
+    } else {
+      return 0
     }
   })
 }

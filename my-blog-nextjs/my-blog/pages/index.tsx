@@ -30,11 +30,6 @@ export default function Home( { allPostsData} ) {
     <Hero />
     <PortfolioSection allPostsData={allPostsData} />
 
-      <h1>Hello World</h1>
-      <Link href="/posts/portfolio">
-        <a>To portfolio</a>
-      </Link>
-
     </>
 
   )

@@ -11,33 +11,33 @@ export default function PortfolioSection({allPostsData} : {
       date: string
       title: string
       id: string
+      img:string
+      caption:string
     }[]
   })  {
 
     return (
 
-        <>
+        allPostsData.map(({ id, date, title, img, caption }) => (
 
-        {allPostsData.map(({ id, date, title }) => (
-
-        // <Card id={id} date={'/posts/' .id} title={} />
+              <Card id={id} date={date} title={title} caption={caption} img={img} />
 
 
-                    <li key={id}>
-                    <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
-                    </Link>
-                    <br />
-                    <small>
-                    <Date dateString={date} />
-                    </small>
-                </li>
-                ))}
-                <h1>Portfolio Section</h1>
-                
-            )
-        </>
+                      //     <li key={id}>
+                      //     <Link href={`/posts/${id}`}>
+                      //     <a>{title}</a>
+                      //     </Link>
+                      //     <br />
+                      //     <small>
+                      //     <Date dateString={date} />
+                      //     </small>
+                      // </li>
+                      // ))}
+                      // <h1>Portfolio Section</h1>
+                      
+                  )
 
+          )
     )
 }
 

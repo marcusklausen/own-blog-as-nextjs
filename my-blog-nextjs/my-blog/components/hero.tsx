@@ -5,7 +5,7 @@ export default function Hero() {
         <div class="hero" id="hero">
         <div class="hero-grid">
             <div class="content" id="hero-content">
-                <h1 class="transition-1">Heading 1<br /> Heading 2</h1>
+                <h1 class="transition-1">Marcusjk<br /> Nextjs portfolio</h1>
                 <h2 class="transition-2">Lorem ipsum dolor sit amet consectetur.</h2>
                 <div class="buttons transition-3">
                     <a href="mailto:hello@marcusklausen.dk" class="button cta">

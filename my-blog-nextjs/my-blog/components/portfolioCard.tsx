@@ -1,22 +1,26 @@
-export default function portfolioCard() {
+import Link from 'next/link'
+
+export default function portfolioCard({id, date, title, img, caption}) {
     return (
 
         <section class="portfolio">
 
 <div class="portfolio-container">
     <div class="inner transition2">
-        <span>Kategori title</span>
-        <a href="#" class="open-work-item">
-            <h3>Lorem ipsum dolor sit amet.</h3>
+        <span>{date}</span>
+        <a href={id} class="open-work-item">
+            <h3>{title}</h3>
         </a>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium illo, pariatur ullam vero eaque libero nemo quod itaque quibusdam sed.</p>
+        <p>{caption}</p>
     </div>
 </div>
 
+<Link href={'posts/' + id}>
 
-<a href="<?php echo($row['case_id']);?>" class="open-work-item">
-<img src="img/portfolio-2.png" alt="" srcset="" />
+<a className="open-work-item">
+    <img src={'img/' + img} alt="" srcSet="" />
 </a>
+</Link>
 
 </section>
     )

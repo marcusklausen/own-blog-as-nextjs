@@ -1,8 +1,22 @@
-export default function Header() {
+import { useState } from 'react'
+
+
+
+
+
+export default function Header({width}: {width: boolean}) {
+
+
+    componentDidMount() {
+        
+    }
+
     return (
+
+        
         <header>
-        <div class="hero-grid">
-            <div class="header left" id="header">
+        {width ? (<div className="hero-grid">) : ('') }
+            <div className="header left" id="header">
                 <a href="https://www.marcusklausen.dk"><span id="logo">Marcus Klausen</span></a>
                 <nav id="nav">
                     <ul>
@@ -12,7 +26,7 @@ export default function Header() {
                     </ul>
                 </nav>
             </div>
-        </div>
-    </header>
+            {width ? (</div>) : ('') }
+        </header>
     )
 }
