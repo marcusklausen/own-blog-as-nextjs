@@ -20,6 +20,8 @@ export function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
+    // test comment from . (dot) shortcut on github
+
     // Combine the data with the id
     return {
       id,
